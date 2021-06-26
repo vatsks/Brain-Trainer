@@ -15,11 +15,13 @@ import java.util.Random;
 public class MainActivity extends AppCompatActivity {
 
 
-    TextView textViewtimer,textViewquestions,textViewansers,textView4;Random rand;
-    Button button,button2,button3,button4;int locationofcorrectanswer,score=0,noofques=0;
+    TextView textViewtimer,textViewquestions,textViewansers,textView4;
+    Random rand;
+    Button button,button2,button3,button4,buttonplayagain;
+    int locationofcorrectanswer,score=0,noofques=0;
     ArrayList<Integer> answer=new ArrayList<>();
 
-    CountDownTimer countDownTimer=new CountDownTimer(30000,1000) {
+    CountDownTimer countDownTimer=new CountDownTimer(10000,1000) {
         @Override
         public void onTick(long millisUntilFinished) {
             textViewtimer.setText(Integer.toString((int) (millisUntilFinished/1000))+"s");
@@ -27,7 +29,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onFinish() {
-            textViewtimer.setText("00s");
+            textView4.setText("Your Score is "+Integer.toString(score)+"/"+Integer.toString(noofques));buttonplayagain.setVisibility(View.VISIBLE);
+
         }
     };
         public void setquestion(){
@@ -36,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             int a= rand.nextInt(20);
             int b= rand.nextInt(61);
             textViewquestions.setText(Integer.toString(a)+"+"+Integer.toString(b));
+            answer.clear();
             locationofcorrectanswer = rand.nextInt(4);
             for(int i=0;i<4;i++){
                 if (i==locationofcorrectanswer){
@@ -63,9 +67,15 @@ public class MainActivity extends AppCompatActivity {
            }else {
                textView4.setText("not correct");
            }
-            noofques++;
+           noofques++;
            textViewansers.setText(Integer.toString(score)+"/"+Integer.toString(noofques));
            setquestion();
+
+
+        }
+        public  void playagain(View view){
+            countDownTimer.start();
+            setquestion();
 
 
         }
@@ -79,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
         button2=findViewById(R.id.button2);
         button3=findViewById(R.id.button3);
         button4=findViewById(R.id.button4);
+        buttonplayagain=findViewById(R.id.buttonplayagain);
         textViewquestions=findViewById(R.id.textViewquestions);
         textViewansers=findViewById(R.id.textViewanswers);
         textView4=findViewById(R.id.textView4);
