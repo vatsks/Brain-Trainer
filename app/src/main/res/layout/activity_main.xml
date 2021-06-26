@@ -14,9 +14,11 @@
         android:layout_marginTop="142dp"
         android:layout_marginBottom="541dp"
         android:onClick="click"
-        android:tag="1"
+        android:tag="0"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.561" />
@@ -29,10 +31,12 @@
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="12dp"
         android:onClick="click"
-        android:tag="2"
+        android:tag="1"
         android:text="Button"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
@@ -43,9 +47,11 @@
         android:layout_marginTop="12dp"
         android:layout_marginBottom="386dp"
         android:onClick="click"
-        android:tag="3"
+        android:tag="2"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
@@ -57,20 +63,23 @@
         android:layout_marginEnd="63dp"
         android:layout_marginBottom="389dp"
         android:onClick="click"
-        android:tag="4"
+        android:tag="3"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button3"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <TextView
         android:id="@+id/textViewtimer"
-        android:layout_width="73dp"
-        android:layout_height="49dp"
+        android:layout_width="60dp"
+        android:layout_height="48dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="18dp"
         android:layout_marginBottom="40dp"
-        android:text="TextView"
+        android:text="30s"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -84,6 +93,7 @@
         android:layout_marginEnd="75dp"
         android:layout_marginBottom="68dp"
         android:text="25+30"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toStartOf="@+id/textViewanswers"
         app:layout_constraintStart_toEndOf="@+id/textViewtimer"
@@ -97,7 +107,23 @@
         android:layout_marginEnd="41dp"
         android:layout_marginBottom="63dp"
         android:text="0/0"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="141dp"
+        android:layout_marginEnd="188dp"
+        android:layout_marginBottom="222dp"
+        android:text="Correct"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button4" />
 </androidx.constraintlayout.widget.ConstraintLayout>
