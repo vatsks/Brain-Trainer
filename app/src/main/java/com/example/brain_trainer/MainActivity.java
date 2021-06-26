@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     int locationofcorrectanswer,score=0,noofques=0;
     ArrayList<Integer> answer=new ArrayList<>();
 
-    CountDownTimer countDownTimer=new CountDownTimer(10000,1000) {
+    CountDownTimer countDownTimer=new CountDownTimer(31000,1000) {
         @Override
         public void onTick(long millisUntilFinished) {
             textViewtimer.setText(Integer.toString((int) (millisUntilFinished/1000))+"s");
@@ -74,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
 
         }
         public  void playagain(View view){
+            score=0;
+            noofques=0;
+            textViewansers.setText(Integer.toString(score)+"/"+Integer.toString(noofques));
             countDownTimer.start();
             setquestion();
 
